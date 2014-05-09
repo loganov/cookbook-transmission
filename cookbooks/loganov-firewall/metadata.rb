@@ -1,6 +1,6 @@
 name             'loganov-firewall'
-maintainer       'YOUR_COMPANY_NAME'
-maintainer_email 'YOUR_EMAIL'
+maintainer       'Loganov Industries'
+maintainer_email 'devops@loganov.com'
 license          'All rights reserved'
 description      'Installs/Configures loganov-firewall'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
