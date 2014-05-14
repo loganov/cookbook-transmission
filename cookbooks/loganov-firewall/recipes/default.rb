@@ -7,6 +7,9 @@
 # All rights reserved - Do Not Redistribute
 #
 
+include_recipe 'firewall'
+include_recipe 'ufw'
+
 #firewall 'ufw' do 
 #  action :enable 
 #end
@@ -17,18 +20,8 @@
 #  notifies :enable, 'firewall[ufw]' 
 #end
 
-directory '/etc/firewall' do
-  owner 'root'
-  group 'root'
-  mode 0755
-  action :create
+firewall_rule 'ssh' do
+  port     22
+  action   :allow
+  notifies :enable, 'firewall[ufw]'
 end
-
-cookbook_file 'rules.iptables' do
- path '/etc/firewall/rules.iptables'
- owner 'root'
- group 'root'
- mode 0755
-end
-
-execute '/sbin/iptables-restore < /etc/firewall/rules.iptables'
