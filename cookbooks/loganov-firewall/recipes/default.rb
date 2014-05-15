@@ -10,9 +10,9 @@
 include_recipe 'firewall'
 include_recipe 'ufw'
 
-#firewall 'ufw' do 
-#  action :enable 
-#end
+firewall 'ufw' do 
+  action :enable 
+end
 
 #firewall_rule 'ssh' do 
 #  port 22 
