@@ -24,10 +24,15 @@ end
 
 execute "a2enmod ssl" do
   command "/usr/sbin/a2enmod ssl"
-  notifies :reload, 'service[apache2]'
+  #notifies :reload, 'service[apache2]'
 end
 
 execute "a2ensite default-ssl" do
   command "/usr/sbin/a2enmod ssl"
-  notifies :reload, 'service[apache2]'
+  #notifies :reload, 'service[apache2]'
+end
+
+service "apache2" do 
+  supports :restart => true, :reload => true
+  action [:enable, :start]
 end
