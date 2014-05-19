@@ -20,7 +20,8 @@ include_recipe "openldap::client"
 
 case node['platform']
 when "ubuntu"
-  package "db4.8-util" do
+  #package "db4.8-util" do
+  package "db5.3-util" do
     action :upgrade
   end
 

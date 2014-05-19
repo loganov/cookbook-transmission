@@ -10,7 +10,7 @@
 include_recipe 'apt'
 
 apt_repository 'owncloud' do
-  uri node['loganov']['owncloud']['apt']['uri']
+  uri "#{node['loganov']['owncloud']['apt']['uri']}"
   key node['loganov']['owncloud']['apt']['key']
   components node['loganov']['owncloud']['apt']['components']
 end
