@@ -8,3 +8,9 @@
 #
 
 include_recipe 'cron'
+
+cron_d 'chef-client' do
+  minute 15
+  command '/usr/bin/chef-client'
+  user 'root'
+end

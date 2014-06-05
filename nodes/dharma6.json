@@ -1,0 +1,16 @@
+{
+  "name": "dharma6",
+  "chef_environment": "_default",
+  "normal": {
+    "loganov": {
+      "user": {
+        "group": {
+          "wheel": "monkey"
+        }
+      }
+    }
+  },
+  "run_list": [
+    "recipe[loganov-user]"
+  ]
+}

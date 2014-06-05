@@ -1,0 +1,21 @@
+{
+  "name": "dharma3",
+  "chef_environment": "dev",
+  "run_list": [
+    "role[loganov-base]",
+    "role[loganov-jenkins]",
+    "recipe[loganov-owncloud]",
+    "recipe[loganov-transmission]"
+  ],
+  "normal": {
+    "tags": [
+
+    ],
+    "firewall": {
+      "state": "[]"
+    },
+    "transmission": {
+      "speed_limit_up": 90
+    }
+  }
+}
