@@ -15,4 +15,11 @@ user_account 'gweaver' do
   home '/home/gweaver'
 end
 
+user_account 'jreed' do
+  action [:create, :modify]
+  comment 'Jay Reed'
+  ssh_keys ['ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAxu8i7mjGyJvKgpACTNjDKfAMt8IxpUYIvg1viE7GyaZbO2RROjEKuPKk3FC0VCGpxgWh7/Gs5R8d0F/BoegwnMtHjH5ahPlBdy98QsamEXVxMdPFMx3QJSWxYQmxmgQnHlLlsDN06+wisLUgR7Ut2NRAA2E2ISHcR3koCj6J9oat0F0w/pml9/nTbN+KmVg58EuIeb8JvUmhGFXihTSyYSw3fcO0TiYdRRb/zsDeiFQLig72862rqrWAXzIIcF9IoLRJt2FPXgHhXaoKHvInPd+ZvsUhP/uBRrUUXixsmo51a1q6MKQztrK4AhqH+z+Az4EgAzyUcpMEWoRG7LKaKQ== johngreedjr@gmail.com']
+  home '/home/jreed'
+end
+
 include_recipe 'loganov-user::groups'

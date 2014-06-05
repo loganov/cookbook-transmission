@@ -7,4 +7,4 @@
 # All rights reserved - Do Not Redistribute
 #
 
-default['loganov']['user']['group']['wheel'] = 'gweaver'
+default['loganov']['user']['group']['wheel'] = ['gweaver', 'jreed']
