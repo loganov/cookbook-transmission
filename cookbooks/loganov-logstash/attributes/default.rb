@@ -1,0 +1,1 @@
+default['loganov']['logstash']['file_url'] = 'https://download.elasticsearch.org/logstash/logstash/logstash-1.4.0.tar.gz'
