@@ -1,1 +1,2 @@
-file '/tmp/monkey'
+file '/tmp/monkey' do
+end
