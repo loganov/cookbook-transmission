@@ -15,19 +15,24 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     provider.client_id = 'b7eeed3646fc5c050f2807f8a85233c3'
     provider.api_key = 'e6f31ddd9eaf1db9c8621277bffe8c30'
   end
+
   config.omnibus.chef_version = :latest
 
-  config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = ["cookbooks"]
-    chef.roles_path = "roles"
-    chef.data_bags_path = "data_bags"
-    chef.provisioning_path = "/tmp/vagrant-chef"
+  config.vm.provision :chef_client do |chef|
+    chef.chef_server_url = "https://chef.loganov.com:443"
+    chef.validation_key_path = "validation.pem"
+    chef.validation_client_name='chef-validator'
+  #config.vm.provision :chef_solo do |chef|
+    #chef.cookbooks_path = ["cookbooks"]
+    #chef.roles_path = "roles"
+    #chef.data_bags_path = "data_bags"
+    #chef.provisioning_path = "/tmp/vagrant-chef"
 
     #chef.json = JSON.parse(IO.read(Pathname(__FILE__).dirname.join('nodes', 'vagrant.json')))
     #chef.json['run_list'].each do |recipe|
     #  chef.add_recipe(recipe)
     #end if chef.json['run_list']
-    chef.add_recipe('loganov-base')
+    chef.add_role('loganov-base')
   end
 
   config.vm.define "hudson-0" do |node|
