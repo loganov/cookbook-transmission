@@ -7,6 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
+
 include_recipe 'jenkins::master'
 
 jenkins_plugin 'greenballs' do
