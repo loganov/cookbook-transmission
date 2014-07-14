@@ -1,0 +1,2 @@
+export DIGITAL_OCEAN_CLIENT_ID=''
+export DIGITAL_OCEAN_API_KEY=''
