@@ -16,9 +16,9 @@ transmission_pkgs.each do |pkg|
 end
 
 ## user add
-#user remove
-#group add
-#group remove
+## user remove
+## group add
+## group remove
 
 template 'settings.json' do
   path "#{node['transmission']['config_dir']}/settings.json"
