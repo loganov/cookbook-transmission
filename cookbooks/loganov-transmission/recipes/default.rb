@@ -15,7 +15,7 @@ transmission_pkgs.each do |pkg|
   end
 end
 
-#user add
+## user add
 #user remove
 #group add
 #group remove
